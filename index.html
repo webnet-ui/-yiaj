@@ -3,256 +3,377 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistem Pendidikan Modern</title>
+  <title>Pusat Kegiatan Belajar Masyarakat (PKBM) - Modern & Inklusif</title>
   
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Google Fonts: Montserrat & Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
-    /* ==========================
-       General & Typography
-       ========================== */
+    /* =======================================
+       Global Styles & Typography
+       ======================================= */
     body {
-      font-family: "Open Sans", sans-serif;
+      font-family: 'Open Sans', sans-serif;
       color: #444444;
+      background-color: #f8f9fa;
     }
     h1, h2, h3, h4, h5, h6 {
-      font-family: "Jost", sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
     }
     a {
       text-decoration: none;
-    }
-
-    /* ==========================
-       Header & Navbar
-       ========================== */
-    #header {
-      background: rgba(40, 58, 90, 0.9);
-      padding: 15px 0;
-      transition: all 0.5s;
-      z-index: 997;
-    }
-    .navbar a {
-      color: #fff;
-      font-size: 15px;
-      font-weight: 500;
-      padding: 10px 20px;
-    }
-    .navbar a:hover, .navbar .active {
-      color: #47b2e4;
-    }
-    .getstarted {
-      background: #47b2e4;
-      border-radius: 50px;
-      padding: 8px 25px !important;
-      margin-left: 30px;
-      color: #fff !important;
       transition: 0.3s;
     }
-    .getstarted:hover {
-      background: #209dd8;
+
+    /* =======================================
+       Top Bar
+       ======================================= */
+    .topbar {
+      background: #1a2a40;
+      color: #fff;
+      font-size: 13px;
+      padding: 10px 0;
+    }
+    .topbar .contact-info i {
+      color: #f39c12;
+      margin-right: 5px;
+    }
+    .topbar .contact-info span {
+      margin-right: 20px;
     }
 
-    /* ==========================
+    /* =======================================
+       Navbar
+       ======================================= */
+    .navbar {
+      background: #ffffff;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+    }
+    .navbar-brand {
+      font-size: 24px;
+      color: #1a2a40;
+      font-weight: 700;
+    }
+    .navbar-brand span {
+      color: #f39c12;
+    }
+    .nav-link {
+      color: #1a2a40;
+      font-weight: 600;
+      font-size: 15px;
+      margin: 0 10px;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: #f39c12;
+    }
+    .btn-login {
+      background: #f39c12;
+      color: #fff;
+      border-radius: 50px;
+      padding: 8px 25px;
+      font-weight: 600;
+    }
+    .btn-login:hover {
+      background: #d68910;
+      color: #fff;
+    }
+
+    /* =======================================
        Hero Section
-       ========================== */
+       ======================================= */
     #hero {
       width: 100%;
-      height: 100vh;
-      background: #37517e;
+      height: 80vh;
+      background: linear-gradient(rgba(26, 42, 64, 0.8), rgba(26, 42, 64, 0.8)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop') center center;
+      background-size: cover;
       display: flex;
       align-items: center;
-      padding-top: 80px;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
     }
     #hero h1 {
-      margin: 0 0 10px 0;
       font-size: 48px;
-      font-weight: 700;
-      line-height: 56px;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s;
+    }
+    #hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      animation: fadeInUp 1s;
+    }
+    .btn-hero {
+      background: #f39c12;
       color: #fff;
-    }
-    #hero h2 {
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 50px;
-      font-size: 24px;
-    }
-    #hero .btn-get-started {
-      font-family: "Jost", sans-serif;
-      font-weight: 500;
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-weight: 600;
       font-size: 16px;
-      letter-spacing: 1px;
-      display: inline-block;
-      padding: 10px 28px 11px 28px;
-      border-radius: 50px;
-      transition: 0.5s;
-      margin: 10px 0 0 0;
+      border: 2px solid #f39c12;
+    }
+    .btn-hero:hover {
+      background: transparent;
+      color: #f39c12;
+    }
+    .btn-hero-outline {
+      background: transparent;
       color: #fff;
-      background: #47b2e4;
-    }
-    #hero .btn-get-started:hover {
-      background: #209dd8;
-    }
-    #hero .btn-watch-video {
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-weight: 600;
       font-size: 16px;
-      display: flex;
-      align-items: center;
-      transition: 0.5s;
-      margin: 10px 0 0 25px;
-      color: #fff;
-      line-height: 1;
+      border: 2px solid #fff;
+      margin-left: 15px;
     }
-    #hero .btn-watch-video i {
-      line-height: 0;
-      color: #fff;
-      font-size: 32px;
-      transition: 0.3s;
-      margin-right: 8px;
-    }
-    #hero .btn-watch-video:hover i {
-      color: #47b2e4;
-    }
-    #hero .animated {
-      animation: up-down 2s ease-in-out infinite alternate-reverse both;
-    }
-    
-    @keyframes up-down {
-      0% { transform: translateY(10px); }
-      100% { transform: translateY(-10px); }
+    .btn-hero-outline:hover {
+      background: #fff;
+      color: #1a2a40;
     }
 
-    /* ==========================
-       Services Section
-       ========================== */
-    .services {
-      padding: 60px 0;
-    }
-    .section-title {
-      text-align: center;
-      padding-bottom: 30px;
-    }
-    .section-title h2 {
-      font-size: 32px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      padding-bottom: 20px;
+    /* =======================================
+       Feature Cards (Overlapping Hero)
+       ======================================= */
+    .features {
+      margin-top: -50px;
       position: relative;
-      color: #37517e;
+      z-index: 10;
     }
-    .section-title h2::after {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 40px;
-      height: 3px;
-      background: #47b2e4;
-      bottom: 0;
-      left: calc(50% - 20px);
-    }
-    .icon-box {
-      box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-      padding: 50px 30px;
-      transition: all ease-in-out 0.4s;
+    .feature-card {
       background: #fff;
+      padding: 30px;
       border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
       height: 100%;
     }
-    .icon-box .icon {
-      margin-bottom: 10px;
-    }
-    .icon-box .icon i {
-      color: #47b2e4;
-      font-size: 36px;
-      transition: 0.3s;
-    }
-    .icon-box h4 {
-      font-weight: 500;
-      margin-bottom: 15px;
-      font-size: 24px;
-    }
-    .icon-box h4 a {
-      color: #37517e;
-      transition: ease-in-out 0.3s;
-    }
-    .icon-box:hover {
+    .feature-card:hover {
       transform: translateY(-10px);
     }
-    .icon-box:hover h4 a {
-      color: #47b2e4;
+    .feature-icon {
+      font-size: 40px;
+      color: #f39c12;
+      margin-bottom: 15px;
+    }
+    .feature-card h4 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #1a2a40;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* =======================================
+       About/Info Section
+       ======================================= */
+    .about-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+    .about-content h2 {
+      color: #1a2a40;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .about-content p {
+      line-height: 1.8;
+      color: #555;
+    }
+    .check-list i {
+      color: #28a745;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    .check-list li {
+      margin-bottom: 15px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      color: #444;
+    }
+    .about-img img {
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* =======================================
+       Footer
+       ======================================= */
+    footer {
+      background: #1a2a40;
+      color: #fff;
+      padding: 40px 0 20px 0;
+    }
+    footer h4 {
+      color: #f39c12;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    footer a {
+      color: #aaa;
+      display: block;
+      margin-bottom: 10px;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
 
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-      <h1 class="logo me-auto"><a href="#" class="text-white text-uppercase fw-bold" style="letter-spacing: 2px;">EduCenter</a></h1>
-      <nav class="navbar">
-        <ul>
-          <li><a class="active" href="#hero">Beranda</a></li>
-          <li><a href="#about">Tentang Kami</a></li>
-          <li><a href="#services">Layanan</a></li>
-          <li><a class="getstarted" href="#">Login Sistem</a></li>
-        </ul>
-      </nav>
+  <!-- Top Bar -->
+  <div class="topbar d-none d-lg-block">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info">
+        <span><i class="bi bi-envelope"></i> admin@yayasanpendidikan.id</span>
+        <span><i class="bi bi-telephone"></i> +62 811 0000 0000</span>
+        <span><i class="bi bi-geo-alt"></i> Jayapura, Papua, Indonesia</span>
+      </div>
+      <div class="social-links">
+        <span class="me-3">Ikuti Kami:</span>
+        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+      </div>
     </div>
-  </header>
+  </div>
 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Edu<span>Foundation</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Tentang Yayasan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#programs">Program Studi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+        </ul>
+        <a href="#" class="btn btn-login">Login E-Learning</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
   <section id="hero">
     <div class="container">
+      <h1>Membangun Ekosistem<br>Pendidikan Berkualitas</h1>
+      <p>Mengintegrasikan sistem manajemen pembelajaran digital dengan<br>kurikulum terstruktur untuk menjamin mutu pendidikan yang inklusif.</p>
+      <div>
+        <a href="#about" class="btn-hero">Pelajari Lebih Lanjut</a>
+        <a href="#" class="btn-hero-outline">Pendaftaran Siswa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Overlay Section -->
+  <section class="features">
+    <div class="container">
       <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1">
-          <h1>Membangun Masa Depan Pendidikan Jayapura</h1>
-          <h2>Sistem manajemen pembelajaran digital terintegrasi untuk mendukung kegiatan belajar mengajar yang efektif dan terstruktur.</h2>
-          <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started">Mulai Jelajahi</a>
-            <a href="#" class="btn-watch-video"><i class="bi bi-play-circle"></i><span>Tonton Video Pengenalan</span></a>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-card">
+            <i class="bi bi-laptop feature-icon"></i>
+            <h4>Sistem Digital Terpadu</h4>
+            <p>Pemanfaatan aplikasi open-source dan web-based learning untuk efisiensi modul pembelajaran dan ujian digital.</p>
           </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img text-center">
-          <img src="https://bootstrapmade.com/content/demo/Arsha/assets/img/hero-img.png" class="img-fluid animated" alt="Hero Image" style="max-width: 80%;">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-card">
+            <i class="bi bi-journal-check feature-icon"></i>
+            <h4>Manajemen Berbasis SOP</h4>
+            <p>Transparansi tata kelola institusi dengan indikator kinerja yang jelas bagi tenaga pendidik dan staf administratif.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-card">
+            <i class="bi bi-mortarboard feature-icon"></i>
+            <h4>Program Kesetaraan</h4>
+            <p>Menyelenggarakan program pendidikan fleksibel yang dirancang untuk memenuhi standar kompetensi nasional.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <main id="main">
-    <section id="services" class="services section-bg bg-light">
-      <div class="container">
-        <div class="section-title">
-          <h2>Fokus Layanan</h2>
-          <p>Mendukung transformasi digital melalui integrasi manajemen data administratif dan modul pembelajaran terbuka.</p>
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0 about-img">
+          <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=2070&auto=format&fit=crop" class="img-fluid" alt="Pendidikan">
         </div>
-        <div class="row">
-          <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-file-earmark-text"></i></div>
-              <h4><a href="#">Modul Pembelajaran</a></h4>
-              <p>Akses pustaka digital dan materi ajar yang disusun sistematis sesuai dengan standar evaluasi kinerja pendidik.</p>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-display"></i></div>
-              <h4><a href="#">Penilaian Digital</a></h4>
-              <p>Platform uji kompetensi dan simulasi ujian berbasis web yang praktis untuk siswa tingkat dasar maupun lanjutan.</p>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-diagram-3"></i></div>
-              <h4><a href="#">Manajemen SOP</a></h4>
-              <p>Digitalisasi prosedur operasional standar yayasan dan manajemen data pusat pembelajaran yang transparan.</p>
-            </div>
-          </div>
+        <div class="col-lg-6 about-content ps-lg-5">
+          <h2>Transformasi Pendidikan untuk Generasi Gemilang</h2>
+          <p>Kami hadir sebagai institusi yang berdedikasi untuk memperluas akses pendidikan melalui Pusat Kegiatan Belajar Masyarakat (PKBM). Dengan memadukan metode pengajaran klasikal dan teknologi informasi, kami memastikan setiap peserta didik mendapatkan pengalaman belajar yang optimal.</p>
+          <ul class="check-list mt-4 p-0">
+            <li><i class="bi bi-check-circle-fill"></i> Legalitas dan Izin Operasional Resmi</li>
+            <li><i class="bi bi-check-circle-fill"></i> Tenaga Pengajar Profesional & Berdedikasi</li>
+            <li><i class="bi bi-check-circle-fill"></i> Fasilitas Ujian Berbasis Komputer (CBT)</li>
+          </ul>
+          <a href="#" class="btn btn-login mt-3">Baca Profil Lengkap</a>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h4>EduFoundation</h4>
+          <p class="text-muted" style="font-size: 14px;">Inisiatif pendidikan modern yang berfokus pada pengembangan sumber daya manusia melalui literasi digital dan manajemen institusi yang profesional.</p>
+        </div>
+        <div class="col-lg-2 mb-4">
+          <h4>Tautan Cepat</h4>
+          <a href="#">Beranda</a>
+          <a href="#">Tentang Kami</a>
+          <a href="#">Program Studi</a>
+          <a href="#">Portal Ujian</a>
+        </div>
+        <div class="col-lg-3 mb-4">
+          <h4>Dukungan</h4>
+          <a href="#">Panduan E-Learning</a>
+          <a href="#">SOP Rekrutmen Tutor</a>
+          <a href="#">Kalender Akademik</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="col-lg-3 mb-4">
+          <h4>Hubungi Kami</h4>
+          <p class="text-muted mb-1" style="font-size: 14px;"><i class="bi bi-geo-alt text-warning me-2"></i> Jayapura, Papua, Indonesia</p>
+          <p class="text-muted mb-1" style="font-size: 14px;"><i class="bi bi-envelope text-warning me-2"></i> admin@yayasan.id</p>
+          <p class="text-muted" style="font-size: 14px;"><i class="bi bi-telephone text-warning me-2"></i> +62 811 0000 0000</p>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 <strong>EduFoundation</strong>. All Rights Reserved. Designed for Modern Education.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+  </html>
