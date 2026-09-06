@@ -10,17 +10,21 @@
   
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Swiper CSS (Untuk Slider) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <!-- GLightbox CSS (Untuk Efek Zoom) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
   <style>
     /* =======================================
        Variabel Warna & Global
        ======================================= */
     :root {
-      --primary-color: #0b4627; /* Hijau Gelap Islami */
-      --secondary-color: #d4af37; /* Emas */
+      --primary-color: #0b4627; 
+      --secondary-color: #d4af37; 
       --text-color: #333333;
       --bg-light: #f4f7f6;
     }
@@ -191,17 +195,12 @@
       margin-bottom: 15px;
       color: var(--primary-color);
     }
-    .program-card p {
-      font-size: 0.95rem;
-      color: #666;
-      line-height: 1.6;
-    }
 
     /* =======================================
        Fasilitas
        ======================================= */
     .facilities {
-      padding: 80px 0;
+      padding: 80px 0 40px 0;
       background: #fff;
     }
     .facility-item {
@@ -225,10 +224,34 @@
       color: var(--secondary-color);
       margin-right: 20px;
     }
-    .facility-item h5 {
-      margin: 0;
-      font-weight: 600;
-      color: var(--primary-color);
+
+    /* =======================================
+       Gallery Slider (Tanpa Judul)
+       ======================================= */
+    .gallery-section {
+      background: #fff;
+      padding-bottom: 80px;
+    }
+    .gallery-slider {
+      padding: 20px 0 50px 0;
+    }
+    .swiper-slide {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      cursor: zoom-in;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .swiper-slide:hover img {
+      transform: scale(1.08);
+    }
+    .swiper-pagination-bullet-active {
+      background-color: var(--primary-color) !important;
     }
 
     /* =======================================
@@ -247,23 +270,12 @@
     .contact-info .d-flex {
       margin-bottom: 25px;
     }
-    .contact-info h5 {
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-    .contact-info p {
-      opacity: 0.9;
-      margin: 0;
-    }
     footer {
       background-color: #072e1a;
       color: #aaa;
       padding: 20px 0;
       text-align: center;
-      font-size: 0.9rem;
     }
-
-    /* Floating WhatsApp Button */
     .float-wa {
       position: fixed;
       width: 60px;
@@ -273,13 +285,12 @@
       background-color: #25d366;
       color: #FFF;
       border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      z-index: 100;
     }
     .float-wa:hover {
       background-color: #128C7E;
@@ -333,40 +344,27 @@
         <p class="text-muted mt-2">Kurikulum terpadu yang menggabungkan ilmu syar'i, akademik, dan keterampilan praktis.</p>
       </div>
       <div class="row g-4">
-        
-        <!-- Program 1 -->
         <div class="col-lg-4 col-md-6">
           <div class="program-card">
-            <div class="icon-box">
-              <i class="bi bi-book"></i>
-            </div>
+            <div class="icon-box"><i class="bi bi-book"></i></div>
             <h4>Tahfizhul Qur'an</h4>
-            <p>Program pendidikan tingkat pertama bagi para santri untuk dapat membaca Al-Qur'an dengan kaidah tajwid yang baik dan benar, serta menghafalnya dengan predikat <strong>mutqin</strong>.</p>
+            <p>Program pendidikan tingkat pertama bagi santri untuk dapat membaca Al-Qur'an dengan baik, serta menghafalnya dengan predikat <strong>mutqin</strong>.</p>
           </div>
         </div>
-
-        <!-- Program 2 -->
         <div class="col-lg-4 col-md-6">
           <div class="program-card">
-            <div class="icon-box">
-              <i class="bi bi-megaphone"></i>
-            </div>
+            <div class="icon-box"><i class="bi bi-megaphone"></i></div>
             <h4>Idad (Da'i)</h4>
-            <p>Program pendidikan tingkat lanjut yang dipersiapkan khusus bagi santri agar dapat menjadi Da'i penebar dakwah Agama Islam yang <strong>Rahmatan Lil 'Alamin</strong> ke berbagai pelosok.</p>
+            <p>Program tingkat lanjut yang dipersiapkan khusus agar santri dapat menjadi Da'i penebar dakwah Agama Islam yang <strong>Rahmatan Lil 'Alamin</strong>.</p>
           </div>
         </div>
-
-        <!-- Program 3 -->
         <div class="col-lg-4 col-md-6">
           <div class="program-card">
-            <div class="icon-box">
-              <i class="bi bi-laptop"></i>
-            </div>
+            <div class="icon-box"><i class="bi bi-laptop"></i></div>
             <h4>Mapel Umum & Life Skill</h4>
-            <p>Pendidikan tambahan ilmu umum (Matematika, B. Indonesia, IPA, IPS, PPKn) dan Ekstrakurikuler praktik <strong>(Instalasi/Perbaikan AC, Komputer, Kerajinan Tangan siap jual)</strong>.</p>
+            <p>Pendidikan ilmu umum dan Ekstrakurikuler praktik <strong>(Instalasi/Perbaikan AC, Komputer, Kerajinan Tangan siap jual)</strong>.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -376,7 +374,7 @@
     <div class="container">
       <div class="section-title">
         <h2>Fasilitas Ma'had</h2>
-        <p class="text-muted mt-2">Sarana dan prasarana yang mendukung kenyamanan dan fokus belajar para santri.</p>
+        <p class="text-muted mt-2">Sarana dan prasarana pendukung kenyamanan belajar.</p>
       </div>
       <div class="row">
         <div class="col-md-6">
@@ -393,7 +391,7 @@
             <i class="bi bi-building facility-icon"></i>
             <div>
               <h5>Ruang Kelas & Sarana</h5>
-              <p class="text-muted mb-0">Ruang belajar yang memadai dan interaktif.</p>
+              <p class="text-muted mb-0">Ruang belajar memadai untuk sarana pembelajaran.</p>
             </div>
           </div>
         </div>
@@ -402,7 +400,7 @@
             <i class="bi bi-dribbble facility-icon"></i>
             <div>
               <h5>Gedung Olahraga</h5>
-              <p class="text-muted mb-0">Fasilitas olahraga untuk menjaga kebugaran fisik santri.</p>
+              <p class="text-muted mb-0">Fasilitas olahraga untuk kebugaran fisik santri.</p>
             </div>
           </div>
         </div>
@@ -410,11 +408,67 @@
           <div class="facility-item">
             <i class="bi bi-pc-display facility-icon"></i>
             <div>
-              <h5>Lab Tajwid & Bahasa Arab Digital</h5>
-              <p class="text-muted mb-0">Laboratorium modern untuk menunjang praktik pelafalan dan bahasa.</p>
+              <h5>Lab Tajwid & Bahasa Arab</h5>
+              <p class="text-muted mb-0">Fasilitas digital menunjang pelafalan dan bahasa.</p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION BARU: Gallery Slider Tanpa Judul -->
+  <section class="gallery-section">
+    <div class="container-fluid px-4">
+      <div class="swiper gallery-slider">
+        <div class="swiper-wrapper align-items-center">
+          
+          <!-- Gambar 1 -->
+          <div class="swiper-slide">
+            <!-- Ganti href dan src dengan link gambar asli Ma'had -->
+            <a href="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop" class="glightbox" data-gallery="mahad-gallery">
+              <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=500&auto=format&fit=crop" alt="Kegiatan Santri 1">
+            </a>
+          </div>
+          
+          <!-- Gambar 2 -->
+          <div class="swiper-slide">
+            <a href="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop" class="glightbox" data-gallery="mahad-gallery">
+              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=500&auto=format&fit=crop" alt="Kegiatan Santri 2">
+            </a>
+          </div>
+          
+          <!-- Gambar 3 -->
+          <div class="swiper-slide">
+            <a href="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop" class="glightbox" data-gallery="mahad-gallery">
+              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=500&auto=format&fit=crop" alt="Fasilitas Kelas">
+            </a>
+          </div>
+          
+          <!-- Gambar 4 -->
+          <div class="swiper-slide">
+            <a href="https://images.unsplash.com/photo-1581078426770-6d336e5de7bf?q=80&w=2070&auto=format&fit=crop" class="glightbox" data-gallery="mahad-gallery">
+              <img src="https://images.unsplash.com/photo-1581078426770-6d336e5de7bf?q=80&w=500&auto=format&fit=crop" alt="Fasilitas Asrama">
+            </a>
+          </div>
+          
+          <!-- Gambar 5 -->
+          <div class="swiper-slide">
+            <a href="https://images.unsplash.com/photo-1584697964400-2af6a2f6204c?q=80&w=2070&auto=format&fit=crop" class="glightbox" data-gallery="mahad-gallery">
+              <img src="https://images.unsplash.com/photo-1584697964400-2af6a2f6204c?q=80&w=500&auto=format&fit=crop" alt="Kegiatan Belajar">
+            </a>
+          </div>
+
+          <!-- Gambar 6 -->
+          <div class="swiper-slide">
+            <a href="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=2073&auto=format&fit=crop" class="glightbox" data-gallery="mahad-gallery">
+              <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=500&auto=format&fit=crop" alt="Buku Islam">
+            </a>
+          </div>
+
+        </div>
+        <!-- Indikator Navigasi Bawah (Titik/Dots) -->
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
@@ -425,8 +479,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6 mb-4 mb-lg-0">
           <h2 class="fw-bold mb-4">Mari Bergabung Bersama Kami</h2>
-          <p class="mb-5">Persiapkan generasi terbaik yang memiliki keseimbangan antara ilmu agama, wawasan akademis, dan kemandirian skill teknologi.</p>
-          
+          <p class="mb-5">Persiapkan generasi terbaik yang memiliki keseimbangan ilmu agama, wawasan akademis, dan kemandirian skill teknologi.</p>
           <div class="contact-info">
             <div class="d-flex align-items-start">
               <i class="bi bi-geo-alt-fill"></i>
@@ -435,7 +488,6 @@
                 <p>Jl. Abu Hurairah Perkampungan Bugis Holtekamp,<br>Jayapura - Papua</p>
               </div>
             </div>
-            
             <div class="d-flex align-items-start">
               <i class="bi bi-telephone-fill"></i>
               <div>
@@ -446,12 +498,17 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <!-- Placeholder Map Area -->
-          <div class="bg-white p-2 rounded shadow-sm" style="height: 350px; width: 100%; display: flex; align-items: center; justify-content: center;">
-            <div class="text-center text-muted">
-              <i class="bi bi-map" style="font-size: 3rem;"></i>
-              <p class="mt-2">Integrasi Google Maps API (Holtekamp, Jayapura)</p>
-            </div>
+          <div class="bg-white p-2 rounded shadow-sm">
+            <!-- Kode Embed Google Maps -->
+            <iframe 
+              src="https://maps.google.com/maps?q=Jl.%20Abu%20Hurairah%20Perkampungan%20Bugis%20Holtekamp,%20Jayapura&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="350" 
+              style="border:0; border-radius: 8px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
       </div>
@@ -465,12 +522,58 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
+  <!-- Floating WA -->
   <a href="https://wa.me/6282189098376" target="_blank" class="float-wa">
     <i class="bi bi-whatsapp"></i>
   </a>
 
-  <!-- Bootstrap JS -->
+  <!-- JS Dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- GLightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <!-- Inisialisasi Script -->
+  <script>
+    // 1. Inisialisasi GLightbox (Untuk Efek Zoom Gambar)
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      zoomable: true
+    });
+
+    // 2. Inisialisasi Swiper Slider (Untuk Geser/Slide Gambar)
+    new Swiper('.gallery-slider', {
+      speed: 600,
+      loop: true, // Mengulang gambar secara terus menerus
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      // Breakpoints untuk memastikan tampilan responsif
+      breakpoints: {
+        320: {
+          slidesPerView: 1, // 1 gambar di HP
+          spaceBetween: 20
+        },
+        768: {
+          slidesPerView: 3, // 3 gambar di Tablet
+          spaceBetween: 20
+        },
+        1200: {
+          slidesPerView: 4, // 4 gambar di Laptop/Desktop
+          spaceBetween: 20
+        }
+      }
+    });
+  </script>
 </body>
-</html>
+  </html>
