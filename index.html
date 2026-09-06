@@ -3,392 +3,415 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PKBM Masa Depan - Pendidikan Terintegrasi</title>
+  <title>Ma'had Ittiba' As-Sunnah Jayapura</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   
+  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
     /* =======================================
-       Global & Variables
+       Variabel Warna & Global
        ======================================= */
     :root {
-      --primary-color: #ff5722; /* Warna Oranye khas NiceSchool */
-      --secondary-color: #252525;
-      --text-color: #666666;
-      --heading-font: 'Rubik', sans-serif;
-      --body-font: 'Poppins', sans-serif;
+      --primary-color: #0b4627; /* Hijau Gelap Islami */
+      --secondary-color: #d4af37; /* Emas */
+      --text-color: #333333;
+      --bg-light: #f4f7f6;
     }
+    
     body {
-      font-family: var(--body-font);
+      font-family: 'Poppins', sans-serif;
       color: var(--text-color);
-      background-color: #fcfcfc;
+      overflow-x: hidden;
     }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--heading-font);
+    
+    .arabic-text {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
       color: var(--secondary-color);
-      font-weight: 700;
     }
+
     a {
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
     /* =======================================
-       Top Bar
-       ======================================= */
-    .topbar {
-      background: var(--secondary-color);
-      color: #ccc;
-      font-size: 13px;
-      padding: 12px 0;
-    }
-    .topbar i {
-      color: var(--primary-color);
-      margin-right: 8px;
-    }
-    .topbar .social-links a {
-      color: #ccc;
-      margin-left: 15px;
-      font-size: 15px;
-    }
-    .topbar .social-links a:hover {
-      color: var(--primary-color);
-    }
-
-    /* =======================================
        Navbar
        ======================================= */
     .navbar {
-      background: #ffffff;
-      padding: 20px 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      padding: 15px 0;
     }
     .navbar-brand {
-      font-size: 28px;
       font-weight: 700;
-      color: var(--secondary-color);
+      color: var(--primary-color) !important;
+      font-size: 1.2rem;
     }
-    .navbar-brand i {
-      color: var(--primary-color);
-      font-size: 32px;
+    .navbar-brand span {
+      color: var(--secondary-color);
     }
     .nav-link {
+      color: #555;
       font-weight: 500;
-      color: var(--secondary-color);
-      margin: 0 12px;
-      font-size: 16px;
+      margin: 0 10px;
     }
     .nav-link:hover, .nav-link.active {
       color: var(--primary-color);
     }
-    .btn-apply {
-      background: var(--primary-color);
+    .btn-daftar-nav {
+      background-color: var(--primary-color);
       color: #fff;
-      padding: 10px 25px;
-      border-radius: 4px;
+      border-radius: 25px;
+      padding: 8px 25px;
       font-weight: 600;
     }
-    .btn-apply:hover {
-      background: #e64a19;
-      color: #fff;
+    .btn-daftar-nav:hover {
+      background-color: #08331c;
+      color: var(--secondary-color);
     }
 
     /* =======================================
        Hero Section
        ======================================= */
     #hero {
-      position: relative;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop') center/cover;
-      height: 80vh;
+      background: linear-gradient(rgba(11, 70, 39, 0.85), rgba(11, 70, 39, 0.85)), url('https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?q=80&w=2070&auto=format&fit=crop') center center/cover;
+      height: 90vh;
       display: flex;
       align-items: center;
+      color: #fff;
+      text-align: center;
     }
     #hero h1 {
-      color: #fff;
-      font-size: 54px;
+      font-size: 3rem;
       font-weight: 700;
       margin-bottom: 20px;
+      line-height: 1.3;
     }
     #hero p {
-      color: #ddd;
-      font-size: 18px;
+      font-size: 1.1rem;
       margin-bottom: 30px;
-      max-width: 600px;
+      opacity: 0.9;
     }
-    .btn-hero {
-      background: var(--primary-color);
-      color: #fff;
-      padding: 12px 30px;
-      border-radius: 4px;
-      font-weight: 600;
-      display: inline-block;
-    }
-    .btn-hero:hover {
-      background: #e64a19;
-      color: #fff;
-    }
-
-    /* =======================================
-       Feature / Info Cards
-       ======================================= */
-    .info-boxes {
-      margin-top: -60px;
-      position: relative;
-      z-index: 10;
-    }
-    .info-box {
-      background: #fff;
-      padding: 40px 30px;
-      border-radius: 5px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: 0.3s;
-      height: 100%;
-    }
-    .info-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    }
-    .info-box i {
-      font-size: 45px;
+    .btn-utama {
+      background-color: var(--secondary-color);
       color: var(--primary-color);
-      margin-bottom: 20px;
-      display: inline-block;
+      padding: 12px 35px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
     }
-    .info-box h4 {
-      font-size: 22px;
-      margin-bottom: 15px;
+    .btn-utama:hover {
+      background-color: #fff;
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    .btn-outline-light {
+      padding: 12px 35px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-left: 10px;
     }
 
     /* =======================================
-       Programs / Courses Section
+       Section Titles
        ======================================= */
-    .programs {
-      padding: 80px 0;
-      background: #f9f9fa;
-    }
     .section-title {
       text-align: center;
       margin-bottom: 50px;
     }
     .section-title h2 {
-      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-color);
       position: relative;
       display: inline-block;
       padding-bottom: 15px;
     }
     .section-title h2::after {
-      content: "";
+      content: '';
       position: absolute;
       width: 60px;
-      height: 3px;
-      background: var(--primary-color);
+      height: 4px;
+      background-color: var(--secondary-color);
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-    }
-    .program-card {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: 0.3s;
-      height: 100%;
-    }
-    .program-card:hover {
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-    .program-img {
-      height: 200px;
-      width: 100%;
-      object-fit: cover;
-    }
-    .program-content {
-      padding: 25px;
-    }
-    .program-tag {
-      background: rgba(255, 87, 34, 0.1);
-      color: var(--primary-color);
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 15px;
-    }
-    .program-content h4 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    .program-footer {
-      border-top: 1px solid #eee;
-      padding-top: 15px;
-      margin-top: 15px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      color: #888;
+      border-radius: 2px;
     }
 
     /* =======================================
-       Footer
+       Program Unggulan
        ======================================= */
-    footer {
-      background: #111;
-      color: #aaa;
-      padding: 60px 0 30px 0;
+    .programs {
+      padding: 80px 0;
+      background-color: var(--bg-light);
     }
-    footer h4 {
+    .program-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+      border-bottom: 5px solid transparent;
+    }
+    .program-card:hover {
+      transform: translateY(-10px);
+      border-bottom: 5px solid var(--secondary-color);
+    }
+    .icon-box {
+      width: 80px;
+      height: 80px;
+      background-color: rgba(11, 70, 39, 0.1);
+      color: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 35px;
+      margin: 0 auto 25px;
+      transition: all 0.3s ease;
+    }
+    .program-card:hover .icon-box {
+      background-color: var(--primary-color);
       color: #fff;
-      font-size: 20px;
-      margin-bottom: 25px;
     }
-    .footer-links li {
-      list-style: none;
-      margin-bottom: 12px;
-    }
-    .footer-links a {
-      color: #aaa;
-    }
-    .footer-links a:hover {
+    .program-card h4 {
+      font-weight: 700;
+      margin-bottom: 15px;
       color: var(--primary-color);
     }
-    .footer-bottom {
-      border-top: 1px solid #333;
-      padding-top: 25px;
-      margin-top: 40px;
+    .program-card p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* =======================================
+       Fasilitas
+       ======================================= */
+    .facilities {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .facility-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: var(--bg-light);
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .facility-item:hover {
+      background: var(--primary-color);
+      color: #fff;
+    }
+    .facility-item:hover h5, .facility-item:hover i {
+      color: #fff !important;
+    }
+    .facility-icon {
+      font-size: 40px;
+      color: var(--secondary-color);
+      margin-right: 20px;
+    }
+    .facility-item h5 {
+      margin: 0;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    /* =======================================
+       Contact & Footer
+       ======================================= */
+    .contact-section {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 60px 0;
+    }
+    .contact-info i {
+      color: var(--secondary-color);
+      font-size: 24px;
+      margin-right: 15px;
+    }
+    .contact-info .d-flex {
+      margin-bottom: 25px;
+    }
+    .contact-info h5 {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .contact-info p {
+      opacity: 0.9;
+      margin: 0;
+    }
+    footer {
+      background-color: #072e1a;
+      color: #aaa;
+      padding: 20px 0;
       text-align: center;
-      font-size: 14px;
+      font-size: 0.9rem;
+    }
+
+    /* Floating WhatsApp Button */
+    .float-wa {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .float-wa:hover {
+      background-color: #128C7E;
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <div class="topbar d-none d-lg-block">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div>
-        <span class="me-4"><i class="bi bi-geo-alt-fill"></i> Pusat Edukasi, Jayapura, Papua</span>
-        <span><i class="bi bi-envelope-fill"></i> info@pkbm-jayapura.id</span>
-      </div>
-      <div class="social-links">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-twitter-x"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-youtube"></i></a>
-      </div>
-    </div>
-  </div>
-
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <i class="bi bi-book-half me-2"></i> PKBM Cendekia
-      </a>
+      <a class="navbar-brand" href="#">MA'HAD <span>ITTIBA' AS-SUNNAH</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang Yayasan</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#hero">Beranda</a></li>
           <li class="nav-item"><a class="nav-link" href="#program">Program Pendidikan</a></li>
-          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fasilitas">Fasilitas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak Kami</a></li>
         </ul>
-        <a href="#" class="btn btn-apply">Login Web-Learning</a>
+        <a href="https://wa.me/6282189098376" target="_blank" class="btn btn-daftar-nav">Daftar Sekarang</a>
       </div>
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section id="hero">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <h1>Pendidikan Modern untuk Masa Depan Cerah</h1>
-          <p>Sistem manajemen pembelajaran inovatif yang dirancang untuk mendukung operasional lembaga secara profesional dan menyediakan akses e-learning yang terstruktur bagi setiap peserta didik.</p>
-          <a href="#program" class="btn-hero">Lihat Program Kami</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="info-boxes">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4 col-md-6">
-          <div class="info-box">
-            <i class="bi bi-laptop"></i>
-            <h4>Sistem Web-Based</h4>
-            <p>Fasilitas e-learning dan ujian digital (CBT) mandiri untuk mengoptimalkan waktu mengajar.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="info-box">
-            <i class="bi bi-file-earmark-check"></i>
-            <h4>Manajemen Berbasis SOP</h4>
-            <p>Tata kelola institusi yang transparan dengan indikator kinerja jelas untuk seluruh staf.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="info-box">
-            <i class="bi bi-award"></i>
-            <h4>Kurikulum Terakreditasi</h4>
-            <p>Mengacu pada standar nasional dengan pendekatan pembelajaran fleksibel dan interaktif.</p>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <p class="arabic-text mb-3">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+          <h1>Selamat Datang di<br>MA'HAD ITTIBA' AS-SUNNAH JAYAPURA</h1>
+          <p>Mencetak generasi Rabbani yang hafal Al-Qur'an, beraqidah lurus, berakhlak mulia, serta memiliki keterampilan (life skill) yang mandiri.</p>
+          <div class="mt-4">
+            <a href="#program" class="btn btn-utama">Jelajahi Program</a>
+            <a href="https://wa.me/6282189098376" target="_blank" class="btn btn-outline-light"><i class="bi bi-whatsapp me-2"></i>Hubungi Kami</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Program Unggulan -->
   <section id="program" class="programs">
     <div class="container">
       <div class="section-title">
         <h2>Program Pendidikan Unggulan</h2>
-        <p class="text-muted mt-2">Menyediakan jalur pendidikan kesetaraan terintegrasi sistem digital.</p>
+        <p class="text-muted mt-2">Kurikulum terpadu yang menggabungkan ilmu syar'i, akademik, dan keterampilan praktis.</p>
       </div>
       <div class="row g-4">
+        
+        <!-- Program 1 -->
         <div class="col-lg-4 col-md-6">
           <div class="program-card">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop" alt="Paket A" class="program-img">
-            <div class="program-content">
-              <span class="program-tag">Tingkat Dasar</span>
-              <h4>Kejar Paket A (Setara SD)</h4>
-              <p>Membangun fondasi literasi dan numerasi dasar dengan pendekatan modul digital interaktif yang ramah anak.</p>
-              <div class="program-footer">
-                <span><i class="bi bi-clock"></i> 6 Semester</span>
-                <span><i class="bi bi-person-video3"></i> Kelas Reguler</span>
-              </div>
+            <div class="icon-box">
+              <i class="bi bi-book"></i>
+            </div>
+            <h4>Tahfizhul Qur'an</h4>
+            <p>Program pendidikan tingkat pertama bagi para santri untuk dapat membaca Al-Qur'an dengan kaidah tajwid yang baik dan benar, serta menghafalnya dengan predikat <strong>mutqin</strong>.</p>
+          </div>
+        </div>
+
+        <!-- Program 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="program-card">
+            <div class="icon-box">
+              <i class="bi bi-megaphone"></i>
+            </div>
+            <h4>Idad (Da'i)</h4>
+            <p>Program pendidikan tingkat lanjut yang dipersiapkan khusus bagi santri agar dapat menjadi Da'i penebar dakwah Agama Islam yang <strong>Rahmatan Lil 'Alamin</strong> ke berbagai pelosok.</p>
+          </div>
+        </div>
+
+        <!-- Program 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="program-card">
+            <div class="icon-box">
+              <i class="bi bi-laptop"></i>
+            </div>
+            <h4>Mapel Umum & Life Skill</h4>
+            <p>Pendidikan tambahan ilmu umum (Matematika, B. Indonesia, IPA, IPS, PPKn) dan Ekstrakurikuler praktik <strong>(Instalasi/Perbaikan AC, Komputer, Kerajinan Tangan siap jual)</strong>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Fasilitas -->
+  <section id="fasilitas" class="facilities">
+    <div class="container">
+      <div class="section-title">
+        <h2>Fasilitas Ma'had</h2>
+        <p class="text-muted mt-2">Sarana dan prasarana yang mendukung kenyamanan dan fokus belajar para santri.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="facility-item">
+            <i class="bi bi-house-heart facility-icon"></i>
+            <div>
+              <h5>Asrama Santri</h5>
+              <p class="text-muted mb-0">Asrama tinggal yang bersih, aman, dan nyaman.</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="program-card">
-            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop" alt="Paket B" class="program-img">
-            <div class="program-content">
-              <span class="program-tag">Tingkat Menengah</span>
-              <h4>Kejar Paket B (Setara SMP)</h4>
-              <p>Pengembangan kompetensi akademis dan keterampilan praktis berbasis proyek untuk remaja dan dewasa.</p>
-              <div class="program-footer">
-                <span><i class="bi bi-clock"></i> 6 Semester</span>
-                <span><i class="bi bi-laptop"></i> Hybrid Learning</span>
-              </div>
+        <div class="col-md-6">
+          <div class="facility-item">
+            <i class="bi bi-building facility-icon"></i>
+            <div>
+              <h5>Ruang Kelas & Sarana</h5>
+              <p class="text-muted mb-0">Ruang belajar yang memadai dan interaktif.</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="program-card">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" alt="Paket C" class="program-img">
-            <div class="program-content">
-              <span class="program-tag">Tingkat Atas</span>
-              <h4>Kejar Paket C (Setara SMA)</h4>
-              <p>Persiapan intensif menuju pendidikan tinggi dan dunia kerja dengan dukungan try-out ujian berbasis komputer.</p>
-              <div class="program-footer">
-                <span><i class="bi bi-clock"></i> 6 Semester</span>
-                <span><i class="bi bi-pc-display"></i> Full E-Learning</span>
-              </div>
+        <div class="col-md-6">
+          <div class="facility-item">
+            <i class="bi bi-dribbble facility-icon"></i>
+            <div>
+              <h5>Gedung Olahraga</h5>
+              <p class="text-muted mb-0">Fasilitas olahraga untuk menjaga kebugaran fisik santri.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="facility-item">
+            <i class="bi bi-pc-display facility-icon"></i>
+            <div>
+              <h5>Lab Tajwid & Bahasa Arab Digital</h5>
+              <p class="text-muted mb-0">Laboratorium modern untuk menunjang praktik pelafalan dan bahasa.</p>
             </div>
           </div>
         </div>
@@ -396,48 +419,58 @@
     </div>
   </section>
 
+  <!-- Kontak Section -->
+  <section id="kontak" class="contact-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="fw-bold mb-4">Mari Bergabung Bersama Kami</h2>
+          <p class="mb-5">Persiapkan generasi terbaik yang memiliki keseimbangan antara ilmu agama, wawasan akademis, dan kemandirian skill teknologi.</p>
+          
+          <div class="contact-info">
+            <div class="d-flex align-items-start">
+              <i class="bi bi-geo-alt-fill"></i>
+              <div>
+                <h5>Alamat Ma'had</h5>
+                <p>Jl. Abu Hurairah Perkampungan Bugis Holtekamp,<br>Jayapura - Papua</p>
+              </div>
+            </div>
+            
+            <div class="d-flex align-items-start">
+              <i class="bi bi-telephone-fill"></i>
+              <div>
+                <h5>Telepon / WhatsApp</h5>
+                <p>0821-8909-8376</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <!-- Placeholder Map Area -->
+          <div class="bg-white p-2 rounded shadow-sm" style="height: 350px; width: 100%; display: flex; align-items: center; justify-content: center;">
+            <div class="text-center text-muted">
+              <i class="bi bi-map" style="font-size: 3rem;"></i>
+              <p class="mt-2">Integrasi Google Maps API (Holtekamp, Jayapura)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <h4 class="text-white d-flex align-items-center">
-            <i class="bi bi-book-half me-2" style="color: var(--primary-color);"></i> PKBM Cendekia
-          </h4>
-          <p>Berdedikasi untuk memberikan akses pendidikan yang merata dan berkualitas melalui manajemen institusi yang tertata serta pemanfaatan teknologi.</p>
-        </div>
-        <div class="col-lg-2 mb-4">
-          <h4>Navigasi</h4>
-          <ul class="footer-links p-0">
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#tentang">Tentang Kami</a></li>
-            <li><a href="#program">Program Belajar</a></li>
-            <li><a href="#">Struktur Yayasan</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 mb-4">
-          <h4>Layanan Sistem</h4>
-          <ul class="footer-links p-0">
-            <li><a href="#">Portal Ujian (CBT)</a></li>
-            <li><a href="#">E-Rapor Akademik</a></li>
-            <li><a href="#">Modul Terbuka</a></li>
-            <li><a href="#">SOP & Panduan Tutor</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 mb-4">
-          <h4>Hubungi Kami</h4>
-          <ul class="footer-links p-0">
-            <li><i class="bi bi-geo-alt" style="color: var(--primary-color);"></i> Jayapura, Papua</li>
-            <li><i class="bi bi-telephone" style="color: var(--primary-color);"></i> +62 812 3456 7890</li>
-            <li><i class="bi bi-envelope" style="color: var(--primary-color);"></i> info@pkbm-jayapura.id</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 <strong>PKBM Cendekia</strong>. Dikembangkan untuk Pendidikan Modern.</p>
-      </div>
+      <p class="mb-0">&copy; 2026 <strong>Ma'had Ittiba' As-Sunnah Jayapura</strong>. All Rights Reserved.</p>
     </div>
   </footer>
 
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6282189098376" target="_blank" class="float-wa">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
